@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- A simple TODO App using Bootstrap and Knockout.js -->
+<!-- Walid Hajeri -->
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TODO APP by Walid</title>
+  <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic|Varela+Round' rel='stylesheet'>
+  <link rel="stylesheet" media="all" href="css/style.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+
+<!-- Bootstrap -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-1.9.0.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+<!-- Knockout -->
+<script type='text/javascript' src='scripts/knockout-3.4.2.js'></script>
+
+
+</head>
+<body>
+    
+    <div class="form-group">
+    <h1>My To-Do <small>List</small></h1>
+    <form role="form">
+        <input type="text" class="form-control" placeholder="Your Todo id" name="addtodoid" data-bind="value: addtodoid">
+        <input type="text" class="form-control" placeholder="Your Todo text" name="addtodotext" data-bind="value: addtodotext">
+        <input type="button" class="btn btn btn-primary"  data-bind="click: addItem" value="Add Todo">
+    </form>
+        </div>
+
+
+    <table class="table table-bordred table-striped">
+
+                  <thead>
+                    <th>#</th>
+                    <th>Item</th>
+                    <th></th>
+                   </thead>
+        <tbody data-bind="foreach: todolist">
+        <tr>
+            <td data-bind="text: todoid"></td>
+            <td data-bind="text: todotext"></td>
+            <td><button type="button" class="btn btn-default btn-sm delete" data-bind="click: $root.removeItem">delete</span></button></td>
+        </tr>        
+   </table>
+
+    <!-- simple test
+    <p><strong data-bind="text: test">cool</strong></p>
+    -->
+
+  <script src="scripts/My.js"></script>
+</body>
+</html>
